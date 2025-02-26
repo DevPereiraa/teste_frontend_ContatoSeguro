@@ -20,9 +20,9 @@ export const Button = styled.button`
   margin-top: 1rem;
   justify-content: center;
   align-items: center;
-  min-width: 120px; /* Define um tamanho mínimo para todos os botões */
+  min-width: 120px; 
   text-align: center;
-  white-space: nowrap; /* Evita que o texto quebre dentro do botão */
+  white-space: nowrap;
 
 
   &:hover {
