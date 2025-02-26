@@ -39,7 +39,7 @@ export const BookForm: React.FC<BookFormProps> = ({ authors, onSubmit, onClose }
         <label htmlFor="author_id">Autor *</label>
         <select
           id="author_id"
-          {...register('author_id', { required: 'O autor é obrigatório, crie um autor primeiro!' })}
+          {...register('author_id', { required: 'O autor é obrigatório, crie ou selecione um autor primeiro!' })}
           style={{
             padding: '0.5rem',
             border: '1px solid #ddd',

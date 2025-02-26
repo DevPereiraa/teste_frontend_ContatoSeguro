@@ -5,7 +5,7 @@ import * as AlertDialog from '@radix-ui/react-alert-dialog';
 export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
 `;
 
 export const Button = styled.button`
@@ -18,6 +18,12 @@ export const Button = styled.button`
   transition: background-color 0.2s;
   outline: none;
   margin-top: 1rem;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px; /* Define um tamanho mínimo para todos os botões */
+  text-align: center;
+  white-space: nowrap; /* Evita que o texto quebre dentro do botão */
+
 
   &:hover {
     background-color: #357abd;
@@ -25,7 +31,7 @@ export const Button = styled.button`
 
   &.danger {
     background-color: #e25c5c;
-    outline: none;
+    margin-right: 0.5rem;
     &:hover {
       background-color: #d43d3d;
     }
@@ -40,16 +46,33 @@ export const Table = styled.table`
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  white-space: wrap; 
 
   th, td {
     padding: 1rem;
-    text-align: left;
+    text-align: center;
     border-bottom: 1px solid #eee;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+  }
+
+  td {
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   th {
     background-color: #f8f9fa;
     font-weight: 600;
+  }
+
+  @media only screen and (max-width: 768px) {
+    th, td {
+      padding: 0.5rem;
+      font-size: 0.9em;
+    }
   }
 `;
 
@@ -58,6 +81,7 @@ export const DialogOverlay = styled(Dialog.Overlay)`
   position: fixed;
   inset: 0;
   animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  
 `;
 
 export const DialogContent = styled(Dialog.Content)`
@@ -73,6 +97,9 @@ export const DialogContent = styled(Dialog.Content)`
   max-height: 85vh;
   padding: 1.5rem;
   animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
 `;
 
 export const Form = styled.form`
@@ -118,4 +145,7 @@ export const AlertDialogContent = styled(AlertDialog.Content)`
   max-width: 500px;
   padding: 1.5rem;
   animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
 `;
